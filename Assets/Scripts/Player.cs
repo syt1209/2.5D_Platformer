@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float _speed = 5f;
     [SerializeField] private float _gravity = 1.0f;
     [SerializeField] private float _jumpHeight = 20.0f;
+    [SerializeField] private int _lives = 3;
+
     private float _yVelocity;
     private bool _canDoubleJump = false;
     [SerializeField] private int _coins = 0;
@@ -24,6 +27,8 @@ public class Player : MonoBehaviour
         {
             Debug.LogError("UIManager is NULL.");
         }
+
+        _uiManager.UpdateLiveText(_lives);
     }
 
     // Update is called once per frame
@@ -76,5 +81,17 @@ public class Player : MonoBehaviour
         }
 
         _uiManager.UpdateCoinText(_coins);
+    }
+
+    public void Damage()
+    {
+        _lives--;
+
+        _uiManager.UpdateLiveText(_lives);
+
+        if (_lives < 1) 
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }

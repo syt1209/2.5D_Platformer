@@ -5,20 +5,15 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    private Text _coinTxt;
-
-    private void Start()
-    {
-        _coinTxt = GameObject.Find("Coin_txt").GetComponent<Text>();
-
-        if (_coinTxt is null) 
-        {
-            Debug.LogError("Coin text is NULL.");
-        }
-    }
+    [SerializeField] private Text _coinTxt, _liveTxt;
 
     public void UpdateCoinText(int coins) 
     {
         _coinTxt.text = "Coins: " + coins.ToString();
+    }
+
+    public void UpdateLiveText(int lives)
+    {
+        _liveTxt.text = "Lives: " + lives.ToString();
     }
 }
