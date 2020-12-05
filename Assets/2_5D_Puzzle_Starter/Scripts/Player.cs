@@ -75,6 +75,11 @@ public class Player : MonoBehaviour
         _uiManager.UpdateCoinDisplay(_coins);
     }
 
+    public int CoinCollected()
+    {
+        return _coins;
+    }
+
     public void Damage()
     {
         _lives--;
