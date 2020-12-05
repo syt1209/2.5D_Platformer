@@ -6,25 +6,15 @@ public class ElevatorPanel : MonoBehaviour
 {
     [SerializeField] private Renderer _callButton;
     [SerializeField] private int _coinTarget = 8;
-    private Player _player;
-    private void Start()
-    {
-        _player = GameObject.Find("Player").GetComponent<Player>();
-
-        if (_player == null)
-        {
-            Debug.LogError("Player is NULL.");
-        }
-    }
-
+    [SerializeField] private GameObject _elevator;
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player") 
         {   
-            if (Input.GetKeyDown(KeyCode.E) && _player.CoinCollected() == _coinTarget)
+            if (Input.GetKeyDown(KeyCode.E) && other.GetComponent<Player>().CoinCollected() > (_coinTarget-1))
             {
-                Debug.Log("Change color to blue");
                 _callButton.material.color = Color.green;
+                _elevator.GetComponent<Elevator>().CallElevator();
             }
         }
     }
