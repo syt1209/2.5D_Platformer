@@ -480,8 +480,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 10}
-  m_Center: {x: 0, y: 0, z: -5}
+  m_Size: {x: 4.5, y: 1, z: 10}
+  m_Center: {x: 1.7, y: 0, z: -5}
 --- !u!23 &442609754
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -708,6 +708,7 @@ GameObject:
   - component: {fileID: 658469780}
   - component: {fileID: 658469779}
   - component: {fileID: 658469782}
+  - component: {fileID: 658469783}
   m_Layer: 0
   m_Name: Elevator
   m_TagString: Untagged
@@ -806,6 +807,19 @@ MonoBehaviour:
   _elevatorPanel: {fileID: 442609751}
   _targetTopPos: {fileID: 1300544251}
   _targetBottomPos: {fileID: 865144271}
+--- !u!65 &658469783
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658469777}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 5.0927896, z: 1}
+  m_Center: {x: 0, y: 2.0463948, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1611,7 +1625,7 @@ PrefabInstance:
     - target: {fileID: 8739375539376734321, guid: 3a7f53b22d7c026499590234396e5fcd,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a7f53b22d7c026499590234396e5fcd, type: 3}
@@ -2205,7 +2219,7 @@ PrefabInstance:
     - target: {fileID: 8739375539376734321, guid: 3a7f53b22d7c026499590234396e5fcd,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a7f53b22d7c026499590234396e5fcd, type: 3}
@@ -3108,7 +3122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798249445}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.34, y: 1.93, z: 0}
+  m_LocalPosition: {x: 17.39, y: 16.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 963194228}
